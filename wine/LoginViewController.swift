@@ -45,6 +45,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Set the Fonts
+        let systemFontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12.0)]
+        UITabBarItem.appearance().setTitleTextAttributes(systemFontAttributes, for: .normal)
+       
     }
 
 
