@@ -10,7 +10,7 @@ import KakaoSDKAuth
 
 
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBAction func onClickKakaoLogin(_ sender: Any) {
         print("clicked")
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
           print("-> KakaoTalkLoginAvailable")
           AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
             print("completion")
+            print(oauthToken)
             if let error = error {
               print("login error")
               print(error)
@@ -28,11 +29,19 @@ class ViewController: UIViewController {
               print("loginWithKakaoTalk() success.")
               //do something
               _ = oauthToken
+                self.bar()
+            
             }
           }
         }
       }
 
+    func bar() {
+        print("SANA-001")
+        let vc = storyboard?.instantiateViewController(identifier: "green_vc") as! UITabBarController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
