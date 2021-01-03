@@ -37,8 +37,7 @@ class LoginViewController: UIViewController {
       }
 
     func bar() {
-        print("SANA-001")
-        let vc = storyboard?.instantiateViewController(identifier: "green_vc") as! UITabBarController
+        let vc = storyboard?.instantiateViewController(identifier: "tab_bar_vc") as! UITabBarController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
