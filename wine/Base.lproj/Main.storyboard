@@ -41,37 +41,37 @@
             </objects>
             <point key="canvasLocation" x="72.799999999999997" y="69.458128078817737"/>
         </scene>
-        <!--Item 2-->
+        <!--지도-->
         <scene sceneID="m6x-d2-SBg">
             <objects>
-                <viewController id="bzM-4Q-z4r" sceneMemberID="viewController">
+                <viewController id="bzM-4Q-z4r" userLabel="지도" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rc0-tO-dP6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="epp-CD-Hr9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="A4p-bf-wWS"/>
+                    <tabBarItem key="tabBarItem" title="지도" id="A4p-bf-wWS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhU-0k-fAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1299" y="-930"/>
         </scene>
-        <!--Item 1-->
+        <!--와인-->
         <scene sceneID="u72-S3-U41">
             <objects>
-                <viewController id="aXu-Wv-Gqj" customClass="WineMapController" customModule="wine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aXu-Wv-Gqj" userLabel="와인" customClass="WineMapController" customModule="wine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TMu-Xq-Opo" customClass="Wine">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eB1-a3-VKo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="h3D-Mr-CDh"/>
+                    <tabBarItem key="tabBarItem" title="와인" id="h3D-Mr-CDh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zam-Ik-6aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299" y="-1536"/>
+            <point key="canvasLocation" x="1348" y="-1590"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lza-TY-7E9">
@@ -85,11 +85,28 @@
                     <connections>
                         <segue destination="aXu-Wv-Gqj" kind="relationship" relationship="viewControllers" id="IRZ-ze-u6T"/>
                         <segue destination="bzM-4Q-z4r" kind="relationship" relationship="viewControllers" id="iKz-AG-CAl"/>
+                        <segue destination="8Ba-rf-HSn" kind="relationship" relationship="viewControllers" id="qAp-VJ-2Hg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bc-b7-PsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="-1233"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="no3-zN-EXQ">
+            <objects>
+                <viewController id="8Ba-rf-HSn" userLabel="설정" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="StI-S5-Rzy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vpO-IN-txd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="3" title="설정" id="5vX-Fv-dwD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1U-mj-kQK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1298" y="-267"/>
         </scene>
     </scenes>
     <resources>
