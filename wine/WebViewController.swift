@@ -9,8 +9,8 @@ import UIKit
 import Foundation
 import WebKit
 
-class WebViewController: UIViewController {
-    
+//class WebViewController: UIViewController {
+class WebViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var WebViewMain: WKWebView!
     //    @IBOutlet weak var WebViewMain: WKWebView!
     
@@ -23,6 +23,14 @@ class WebViewController: UIViewController {
             WebViewMain.load(urlReq)
         }
     }
+    
+    override func loadView() {
+        let webConfiguration = WKWebViewConfiguration()
+        WebViewMain = WKWebView(frame: .zero, configuration: webConfiguration)
+        WebViewMain.uiDelegate = self
+        view = WebViewMain
+    }
+    
 
     
 }
