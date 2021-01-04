@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0776AFCD2F1A5B6172D0A3D5 /* Pods_wineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B9E79AE8B78AF365F1D9A2 /* Pods_wineTests.framework */; };
 		210B90F2466F394CECCE373A /* Pods_wine_wineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A411808A20592D3B24EFB809 /* Pods_wine_wineUITests.framework */; };
+		2646D14025A3351E0046FA93 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2646D13F25A3351E0046FA93 /* WebViewController.swift */; };
 		264ADB0F259DEB9800A23C7A /* WineMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264ADB0E259DEB9800A23C7A /* WineMapController.swift */; };
 		269DD0B1259A16370001D102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269DD0B0259A16370001D102 /* AppDelegate.swift */; };
 		269DD0B3259A16370001D102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269DD0B2259A16370001D102 /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 		0312266C17B5970BAA608426 /* Pods-wine-wineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wine-wineUITests.release.xcconfig"; path = "Target Support Files/Pods-wine-wineUITests/Pods-wine-wineUITests.release.xcconfig"; sourceTree = "<group>"; };
 		121A94CB3EFF003B6A7EB94D /* Pods-wineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wineTests.release.xcconfig"; path = "Target Support Files/Pods-wineTests/Pods-wineTests.release.xcconfig"; sourceTree = "<group>"; };
 		23F71C20B9680D0D8D95EDC0 /* Pods-wine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wine.release.xcconfig"; path = "Target Support Files/Pods-wine/Pods-wine.release.xcconfig"; sourceTree = "<group>"; };
+		2646D13F25A3351E0046FA93 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		264ADB0E259DEB9800A23C7A /* WineMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineMapController.swift; sourceTree = "<group>"; };
 		269DD0AD259A16370001D102 /* wine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		269DD0B0259A16370001D102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				269DD0B9259A16390001D102 /* Assets.xcassets */,
 				269DD0BB259A16390001D102 /* LaunchScreen.storyboard */,
 				269DD0BE259A16390001D102 /* Info.plist */,
+				2646D13F25A3351E0046FA93 /* WebViewController.swift */,
 			);
 			path = wine;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				269DD0B5259A16370001D102 /* LoginViewController.swift in Sources */,
 				264ADB0F259DEB9800A23C7A /* WineMapController.swift in Sources */,
 				269DD0B1259A16370001D102 /* AppDelegate.swift in Sources */,
+				2646D14025A3351E0046FA93 /* WebViewController.swift in Sources */,
 				269DD0B3259A16370001D102 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

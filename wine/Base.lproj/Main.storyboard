@@ -44,18 +44,41 @@
         <!--지도-->
         <scene sceneID="m6x-d2-SBg">
             <objects>
-                <viewController id="bzM-4Q-z4r" userLabel="지도" sceneMemberID="viewController">
+                <viewController id="bzM-4Q-z4r" userLabel="지도" customClass="WebViewController" customModule="wine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rc0-tO-dP6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ygl-6c-NKk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8B-M8-yS9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="epp-CD-Hr9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="지도" image="MapIcon" id="A4p-bf-wWS"/>
+                    <connections>
+                        <outlet property="WebViewMain" destination="f8B-M8-yS9" id="Jt6-RL-Se5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhU-0k-fAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299" y="-930"/>
+            <point key="canvasLocation" x="1298.4000000000001" y="-930.29556650246309"/>
         </scene>
         <!--와인-->
         <scene sceneID="u72-S3-U41">
@@ -129,11 +152,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ChatImage" width="8" height="8"/>
+        <image name="ChatImage" width="21.333333969116211" height="21.333333969116211"/>
         <image name="KakaoLogin" width="122" height="30"/>
-        <image name="MapIcon" width="8" height="8"/>
-        <image name="SettingsIcon" width="8" height="8"/>
-        <image name="WineIcon" width="8" height="8"/>
+        <image name="MapIcon" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="SettingsIcon" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="WineIcon" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
