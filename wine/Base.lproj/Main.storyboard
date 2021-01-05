@@ -59,7 +59,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8B-M8-yS9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="846"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -121,10 +121,77 @@
         <!--문의-->
         <scene sceneID="no3-zN-EXQ">
             <objects>
-                <viewController id="8Ba-rf-HSn" userLabel="문의" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="8Ba-rf-HSn" userLabel="문의" customClass="ChatViewController" customModule="wine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="StI-S5-Rzy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rbS-nh-yMg">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SanaCustomCell" rowHeight="150" id="3FW-zN-62x" userLabel="Chat Table View Cell" customClass="ChatTableViewCell" customModule="wine" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3FW-zN-62x" id="ROc-2h-gMX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WinePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="NrZ-kS-fEI">
+                                                    <rect key="frame" x="16" y="29.999999999999993" width="85" height="92.333333333333314"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="저스트 와인" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vME-af-HAO">
+                                                    <rect key="frame" x="109" y="21" width="105" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="답변 완료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8Z-gJ-3IN">
+                                                    <rect key="frame" x="109" y="68" width="76" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.21862282652722814" green="0.54271097715736039" blue="0.24546349769190459" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Primitivo di Manduria 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8z-Xb-5AW">
+                                                    <rect key="frame" x="109" y="85" width="250" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 1시간전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiL-Qg-VMz">
+                                                    <rect key="frame" x="170" y="58" width="80" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NrZ-kS-fEI" firstAttribute="width" secondItem="ROc-2h-gMX" secondAttribute="width" multiplier="0.226667" id="5uh-bs-lkC"/>
+                                                <constraint firstItem="NrZ-kS-fEI" firstAttribute="leading" secondItem="ROc-2h-gMX" secondAttribute="leading" constant="16" id="FyF-3S-1hl"/>
+                                                <constraint firstItem="NrZ-kS-fEI" firstAttribute="height" secondItem="ROc-2h-gMX" secondAttribute="height" multiplier="0.616352" id="GKE-xl-mdI"/>
+                                                <constraint firstItem="NrZ-kS-fEI" firstAttribute="top" secondItem="ROc-2h-gMX" secondAttribute="top" constant="30" id="x7H-IZ-nfL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="chatState" destination="G8Z-gJ-3IN" id="MYP-eM-vXK"/>
+                                            <outlet property="elapsedTime" destination="AiL-Qg-VMz" id="vov-xi-3OZ"/>
+                                            <outlet property="shopName" destination="vME-af-HAO" id="HxS-Vb-qCS"/>
+                                            <outlet property="wineImage" destination="NrZ-kS-fEI" id="2fD-QS-2L6"/>
+                                            <outlet property="wineName" destination="h8z-Xb-5AW" id="uia-0E-CSU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Ba-rf-HSn" id="0Qt-qd-nOo"/>
+                                    <outlet property="delegate" destination="8Ba-rf-HSn" id="CHq-0R-sRU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vpO-IN-txd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -132,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1U-mj-kQK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298" y="-267"/>
+            <point key="canvasLocation" x="1296.8" y="-267.48768472906403"/>
         </scene>
         <!--설정-->
         <scene sceneID="UDo-NI-eJa">
@@ -157,8 +224,12 @@
         <image name="MapIcon" width="21.333333969116211" height="21.333333969116211"/>
         <image name="SettingsIcon" width="21.333333969116211" height="21.333333969116211"/>
         <image name="WineIcon" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="WinePhoto" width="57" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
