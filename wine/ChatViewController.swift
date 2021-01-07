@@ -44,6 +44,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 withIdentifier: "SanaCustomCell",
                 for: indexPath
             )
+        
+        cell.separatorInset = UIEdgeInsets.zero
 
         return cell
     }
