@@ -110,7 +110,7 @@
                     <connections>
                         <segue destination="aXu-Wv-Gqj" kind="relationship" relationship="viewControllers" id="IRZ-ze-u6T"/>
                         <segue destination="bzM-4Q-z4r" kind="relationship" relationship="viewControllers" id="iKz-AG-CAl"/>
-                        <segue destination="8Ba-rf-HSn" kind="relationship" relationship="viewControllers" id="qAp-VJ-2Hg"/>
+                        <segue destination="DUR-52-l6M" kind="relationship" relationship="viewControllers" id="qAp-VJ-2Hg"/>
                         <segue destination="g1O-dc-sZU" kind="relationship" relationship="viewControllers" id="Tbh-IR-ejm"/>
                     </connections>
                 </tabBarController>
@@ -127,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rbS-nh-yMg">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="101" width="375" height="628"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -191,15 +191,32 @@
                                     <outlet property="delegate" destination="8Ba-rf-HSn" id="CHq-0R-sRU"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6c-dY-1uA">
+                                <rect key="frame" x="0.0" y="44" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="문의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rid-wr-EsV">
+                                        <rect key="frame" x="20" y="4" width="61" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vpO-IN-txd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="문의" image="ChatImage" id="5vX-Fv-dwD"/>
+                    <navigationItem key="navigationItem" id="xW9-Fp-jgF"/>
+                    <connections>
+                        <outlet property="titleView" destination="M6c-dY-1uA" id="iM0-7n-ehF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1U-mj-kQK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1296.8" y="-267.48768472906403"/>
+            <point key="canvasLocation" x="2239.1999999999998" y="-267.48768472906403"/>
         </scene>
         <!--설정-->
         <scene sceneID="UDo-NI-eJa">
@@ -216,6 +233,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1q2-2P-gZI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1297" y="406"/>
+        </scene>
+        <!--문의-->
+        <scene sceneID="8cQ-oq-EA1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="DUR-52-l6M" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="3" title="문의" image="ChatImage" id="5vX-Fv-dwD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hm1-uO-Pkd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Ba-rf-HSn" kind="relationship" relationship="rootViewController" id="Wf6-e6-O5B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmq-Tv-WQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1296.8" y="-267.48768472906403"/>
         </scene>
     </scenes>
     <resources>
