@@ -221,18 +221,41 @@
         <!--설정-->
         <scene sceneID="UDo-NI-eJa">
             <objects>
-                <viewController id="g1O-dc-sZU" sceneMemberID="viewController">
+                <viewController id="g1O-dc-sZU" customClass="SettingsViewController" customModule="wine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xGR-8S-jxc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEC-hG-5bg">
+                                <rect key="frame" x="0.0" y="44" width="375" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaO-cS-wUl">
+                                        <rect key="frame" x="20" y="8" width="59" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="mkI-h6-qSb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BX6-6h-b8q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DEC-hG-5bg" firstAttribute="top" secondItem="BX6-6h-b8q" secondAttribute="top" id="2hR-Jx-0o0"/>
+                            <constraint firstItem="DEC-hG-5bg" firstAttribute="trailing" secondItem="BX6-6h-b8q" secondAttribute="trailing" id="8Mt-Du-ffh"/>
+                            <constraint firstItem="DEC-hG-5bg" firstAttribute="leading" secondItem="BX6-6h-b8q" secondAttribute="leading" id="aCT-qk-qGe"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="설정" image="SettingsIcon" id="57d-4O-1Bu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1q2-2P-gZI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="406"/>
+            <point key="canvasLocation" x="1296.8" y="405.66502463054189"/>
         </scene>
         <!--문의-->
         <scene sceneID="8cQ-oq-EA1">
