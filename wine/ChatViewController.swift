@@ -9,18 +9,56 @@
 import UIKit
 import Foundation
 
+class ChatItem {
+    let id: String?
+    let shop: String?
+    let wine: String?
+    let state: String?
+    let content: String?
+    
+    init(id: String, shop: String, wine: String, state: String, content: String) {
+        self.id = id
+        self.shop = shop
+        self.wine = wine
+        self.state = state
+        self.content = content
+    }
+}
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-    let shops = ["저스트와인", "와인엔모어 데일리 서판교점", "와인타임 판교점"]
-    let wines = ["Primitivo di Manduria 2015", "Primitivo di Manduria 2015", "1000 StoriesZinfandel 2016"]
-    let states = ["답변 완료", "답변 완료", "답변 완료"]
-    let contents = ["재고 충분합니다. 궁금한 사항 연락주세요:)", "재고 충분합니다. 궁금한 사항 연락주세요:)",  "재고 충분합니다. 궁금한 사항 연락주세요:)"]
-
- 
     @IBOutlet weak var titleView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        // URL
+        // URL Components
+        let urlComponents = URLComponents(string: "https://9l885hmyfg.execute-api.ap-northeast-2.amazonaws.com/dev/inquiry")!
+        let requestURL = urlComponents.url!
+
+        let dataTask = session.dataTask(with: requestURL) { (data, response, error) in
+            guard error == nil else { return }
+            
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else { return }
+            let successRange = 200..<300
+            
+            guard successRange.contains(statusCode) else {
+                // handle response error
+                return
+            }
+            
+            guard let resultData = data else { return }
+            let resultString = String(data: resultData, encoding: .utf8)
+            
+            
+            
+            print("---> result : \(resultString)")
+        }
+
+        dataTask.resume()
         
         titleView.layer.addBorder([.bottom], color: UIColor.lightGray, width: 0.5)
 

@@ -83,18 +83,68 @@
         <!--와인-->
         <scene sceneID="u72-S3-U41">
             <objects>
-                <viewController id="aXu-Wv-Gqj" userLabel="와인" customClass="WineMapController" customModule="wine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aXu-Wv-Gqj" userLabel="와인" customClass="WineViewController" customModule="wine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TMu-Xq-Opo" customClass="Wine">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pB5-Ft-SZC" customClass="wineSearchBar">
+                                <rect key="frame" x="0.0" y="94" width="375" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="mI8-dr-ufP"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtw-Q9-Dpq">
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="와인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-A6-gOe">
+                                        <rect key="frame" x="20" y="0.0" width="57" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4lj-ri-2CT"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wineGray" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-Wz-guY">
+                                <rect key="frame" x="162.66666666666666" y="381" width="50" height="50"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="Jad-eT-vPV"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Q1i-IC-hW9"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="Syd-wf-QCW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="fhZ-kB-HkP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eB1-a3-VKo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eB1-a3-VKo" firstAttribute="trailing" secondItem="pB5-Ft-SZC" secondAttribute="trailing" id="1MY-hO-8ud"/>
+                            <constraint firstItem="pB5-Ft-SZC" firstAttribute="top" secondItem="jtw-Q9-Dpq" secondAttribute="bottom" id="9np-7A-pZp"/>
+                            <constraint firstItem="jtw-Q9-Dpq" firstAttribute="trailing" secondItem="eB1-a3-VKo" secondAttribute="trailing" id="CAV-Jy-2fM"/>
+                            <constraint firstItem="jtw-Q9-Dpq" firstAttribute="top" secondItem="eB1-a3-VKo" secondAttribute="top" id="CRW-Dy-Vi4"/>
+                            <constraint firstItem="cGS-Wz-guY" firstAttribute="centerX" secondItem="TMu-Xq-Opo" secondAttribute="centerX" id="adu-09-Zxv"/>
+                            <constraint firstItem="cGS-Wz-guY" firstAttribute="centerY" secondItem="TMu-Xq-Opo" secondAttribute="centerY" id="bBk-yX-rAE"/>
+                            <constraint firstItem="cGS-Wz-guY" firstAttribute="centerY" secondItem="TMu-Xq-Opo" secondAttribute="centerY" id="irp-BZ-Hj8"/>
+                            <constraint firstItem="jtw-Q9-Dpq" firstAttribute="leading" secondItem="eB1-a3-VKo" secondAttribute="leading" id="q9n-uv-qLd"/>
+                            <constraint firstItem="cGS-Wz-guY" firstAttribute="centerX" secondItem="TMu-Xq-Opo" secondAttribute="centerX" id="uX3-bN-mVL"/>
+                            <constraint firstItem="pB5-Ft-SZC" firstAttribute="leading" secondItem="TMu-Xq-Opo" secondAttribute="leading" id="vwJ-sy-beL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="와인" image="WineIcon" id="h3D-Mr-CDh"/>
+                    <connections>
+                        <outlet property="wineSearchBar" destination="pB5-Ft-SZC" id="bM7-bc-e3Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zam-Ik-6aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="-1590"/>
+            <point key="canvasLocation" x="1348" y="-1590.1477832512317"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lza-TY-7E9">
@@ -126,9 +176,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rbS-nh-yMg">
-                                <rect key="frame" x="0.0" y="101" width="375" height="628"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6c-dY-1uA">
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="문의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rid-wr-EsV">
+                                        <rect key="frame" x="20" y="4" width="61" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="l9i-Xe-hhi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tgR-hP-jVS"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rbS-nh-yMg">
+                                <rect key="frame" x="0.0" y="94" width="375" height="635"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SanaCustomCell" rowHeight="150" id="3FW-zN-62x" userLabel="Chat Table View Cell" customClass="ChatTableViewCell" customModule="wine" customModuleProvider="target">
@@ -191,23 +257,18 @@
                                     <outlet property="delegate" destination="8Ba-rf-HSn" id="CHq-0R-sRU"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6c-dY-1uA">
-                                <rect key="frame" x="0.0" y="44" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="문의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rid-wr-EsV">
-                                        <rect key="frame" x="20" y="4" width="61" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vpO-IN-txd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rbS-nh-yMg" firstAttribute="bottom" secondItem="vpO-IN-txd" secondAttribute="bottom" id="8TY-tf-1kw"/>
+                            <constraint firstItem="M6c-dY-1uA" firstAttribute="leading" secondItem="vpO-IN-txd" secondAttribute="leading" id="Rn5-kf-GIb"/>
+                            <constraint firstItem="rbS-nh-yMg" firstAttribute="top" secondItem="M6c-dY-1uA" secondAttribute="bottom" id="Xx9-8L-O1X"/>
+                            <constraint firstItem="rbS-nh-yMg" firstAttribute="trailing" secondItem="vpO-IN-txd" secondAttribute="trailing" id="eia-0r-xy2"/>
+                            <constraint firstItem="M6c-dY-1uA" firstAttribute="top" secondItem="vpO-IN-txd" secondAttribute="top" id="emP-bk-MR1"/>
+                            <constraint firstItem="rbS-nh-yMg" firstAttribute="leading" secondItem="vpO-IN-txd" secondAttribute="leading" id="jwL-oj-O25"/>
+                            <constraint firstItem="M6c-dY-1uA" firstAttribute="trailing" secondItem="vpO-IN-txd" secondAttribute="trailing" id="rSX-CN-G0z"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xW9-Fp-jgF"/>
                     <connections>
@@ -239,6 +300,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="W0Y-Up-Cv5"/>
                                     <constraint firstAttribute="height" constant="64" id="mkI-h6-qSb"/>
                                 </constraints>
                             </view>
@@ -284,6 +346,7 @@
         <image name="SettingsIcon" width="21.333333969116211" height="21.333333969116211"/>
         <image name="WineIcon" width="21.333333969116211" height="21.333333969116211"/>
         <image name="WinePhoto" width="57" height="200"/>
+        <image name="wineGray" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

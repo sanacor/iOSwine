@@ -12,7 +12,7 @@
 		2646D14025A3351E0046FA93 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2646D13F25A3351E0046FA93 /* WebViewController.swift */; };
 		2646D14525A434BF0046FA93 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2646D14425A434BF0046FA93 /* ChatViewController.swift */; };
 		2646D15525A7691B0046FA93 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2646D15425A7691A0046FA93 /* Settings.swift */; };
-		264ADB0F259DEB9800A23C7A /* WineMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264ADB0E259DEB9800A23C7A /* WineMapController.swift */; };
+		2661D26A25A8494100047F9E /* WineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2661D26925A8494100047F9E /* WineController.swift */; };
 		269DD0B1259A16370001D102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269DD0B0259A16370001D102 /* AppDelegate.swift */; };
 		269DD0B3259A16370001D102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269DD0B2259A16370001D102 /* SceneDelegate.swift */; };
 		269DD0B5259A16370001D102 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269DD0B4259A16370001D102 /* LoginViewController.swift */; };
@@ -48,7 +48,7 @@
 		2646D13F25A3351E0046FA93 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2646D14425A434BF0046FA93 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2646D15425A7691A0046FA93 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		264ADB0E259DEB9800A23C7A /* WineMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineMapController.swift; sourceTree = "<group>"; };
+		2661D26925A8494100047F9E /* WineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineController.swift; sourceTree = "<group>"; };
 		269DD0AD259A16370001D102 /* wine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		269DD0B0259A16370001D102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		269DD0B2259A16370001D102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +127,6 @@
 				269DD0B0259A16370001D102 /* AppDelegate.swift */,
 				269DD0B2259A16370001D102 /* SceneDelegate.swift */,
 				269DD0B4259A16370001D102 /* LoginViewController.swift */,
-				264ADB0E259DEB9800A23C7A /* WineMapController.swift */,
 				269DD0B6259A16370001D102 /* Main.storyboard */,
 				269DD0B9259A16390001D102 /* Assets.xcassets */,
 				269DD0BB259A16390001D102 /* LaunchScreen.storyboard */,
@@ -135,6 +134,7 @@
 				2646D13F25A3351E0046FA93 /* WebViewController.swift */,
 				2646D14425A434BF0046FA93 /* ChatViewController.swift */,
 				2646D15425A7691A0046FA93 /* Settings.swift */,
+				2661D26925A8494100047F9E /* WineController.swift */,
 			);
 			path = wine;
 			sourceTree = "<group>";
@@ -420,10 +420,10 @@
 			files = (
 				269DD0B5259A16370001D102 /* LoginViewController.swift in Sources */,
 				2646D14525A434BF0046FA93 /* ChatViewController.swift in Sources */,
-				264ADB0F259DEB9800A23C7A /* WineMapController.swift in Sources */,
 				269DD0B1259A16370001D102 /* AppDelegate.swift in Sources */,
 				2646D15525A7691B0046FA93 /* Settings.swift in Sources */,
 				2646D14025A3351E0046FA93 /* WebViewController.swift in Sources */,
+				2661D26A25A8494100047F9E /* WineController.swift in Sources */,
 				269DD0B3259A16370001D102 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
