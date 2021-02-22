@@ -49,12 +49,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 do {
                     //Json타입의 데이터를 디코딩
-//                    let resultData = try JSONDecoder().decode(ChatResponse.self, from: data)
                     let ChatList = try JSONDecoder().decode([Chat].self, from: data)
                     self.chats = ChatList
                     
                     for chat in self.chats {
-                        print("SANA-000-009")
                         self.shopList.append(chat.shop!)
                         self.wineList.append(chat.wine!)
                         self.stateList.append(chat.state!)
@@ -86,65 +84,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         getChats()
-        
-//        let config = URLSessionConfiguration.default
-//        let session = URLSession(configuration: config)
-//
-//        // URL
-//        // URL Components
-//        let urlComponents = URLComponents(string: "https://9l885hmyfg.execute-api.ap-northeast-2.amazonaws.com/dev/inquiry")!
-//        let requestURL = urlComponents.url!
-//
-//        let dataTask = session.dataTask(with: requestURL) { (data, response, error) in
-//            guard error == nil else { return }
-//
-//            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else { return }
-//            let successRange = 200..<300
-//
-//            guard successRange.contains(statusCode) else {
-//                // handle response error
-//                return
-//            }
-//
-//            guard let resultData = data else { return }
-//            let resultString = String(data: resultData, encoding: .utf8)
-//
-//
-//
-////            print("---> result : \(resultString)")
-//            print("SANA-000-005")
-//
-//            do {
-//                let ChatList = try JSONDecoder().decode([Chat].self, from: resultData)
-//                print(ChatList)
-//                print(ChatList[0])
-//                self.chats = ChatList
-//                print("SANA-000-006")
-//            } catch {
-//                print("SANA-000-007")
-//                print(error)
-//
-//            }
-//
-//            print("SANA-000-008")
-//            for chat in self.chats {
-//                print("SANA-000-009")
-//                self.shopList.append(chat.shop!)
-//                self.wineList.append(chat.wine!)
-//                self.stateList.append(chat.state!)
-//                self.contentList.append(chat.content!)
-//
-//
-//            }
-//
-//            print("SANA-000-010")
-//            print(self.shopList)
-//            print(self.wineList)
-//            print(self.stateList)
-//            print(self.contentList)
-//        }
-
-//        dataTask.resume()
+   
         
         titleView.layer.addBorder([.bottom], color: UIColor.lightGray, width: 0.5)
 
@@ -153,8 +93,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("SANA-000-002")
-        print(self.chats.count)
+
         return self.chats.count
     }
     
@@ -163,26 +102,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("SANA-000-003")
         let cell =
             tableView.dequeueReusableCell(
                 withIdentifier: "ChatTableViewCell",
                 for: indexPath
             ) as! ChatTableViewCell
-        
-//        let cell = tableView.dequeueReusableCell("ChatTableViewCell", forIndexPath: indexPath) as! ChatTableViewCell
 
-        
-        
         cell.separatorInset = UIEdgeInsets.zero
         
         cell.shopName?.text = self.shopList[indexPath.row]
         cell.wineName?.text = self.wineList[indexPath.row]
         cell.chatState?.text = self.stateList[indexPath.row]
         
-        print("SANA-000-001")
-        print(cell)
-
         return cell
     }
 }
