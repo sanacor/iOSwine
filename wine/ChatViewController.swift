@@ -9,27 +9,71 @@
 import UIKit
 import Foundation
 
-class ChatItem {
+
+struct ChatResponse: Codable {
+    var results: [Chat]
+}
+
+struct Chat: Codable {
     let id: String?
     let shop: String?
     let wine: String?
     let state: String?
     let content: String?
-    
-    init(id: String, shop: String, wine: String, state: String, content: String) {
-        self.id = id
-        self.shop = shop
-        self.wine = wine
-        self.state = state
-        self.content = content
-    }
+
 }
 
+
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    private let url = "https://9l885hmyfg.execute-api.ap-northeast-2.amazonaws.com/dev/inquiry"
+    private var chats: [Chat] = []
+    private var shopList: [String] = []
+    private var wineList: [String] = []
+    private var stateList: [String] = []
+    private var contentList: [String] = []
+    
+    
+    private func getChats() {
+        
+        //URLSession의 싱글턴 객체
+        let session = URLSession.shared
+        guard let requestURL = URL(string: url) else {return}
+
+        // 네트워킹 시작
+        session.dataTask(with: requestURL) { data, response, error in
+            guard error == nil else {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
+                do {
+                    //Json타입의 데이터를 디코딩
+                    let userResponse = try JSONDecoder().decode(ChatResponse.self, from: data)
+                    self.chats = userResponse.results
+                    DispatchQueue.main.async {
+                        //UI작업은 꼭 main 스레드에서 !!
+                        self.tableView.reloadData()
+                    }
+                } catch(let err) {
+                    print("Decoding Error")
+                    print(err.localizedDescription)
+                }
+            }
+        }.resume()
+    }
     @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+//        getChats()
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
@@ -54,8 +98,33 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let resultString = String(data: resultData, encoding: .utf8)
             
             
+    
+//            print("---> result : \(resultString)")
+            print("SANA-000-005")
             
-            print("---> result : \(resultString)")
+            do {
+                let ChatList = try JSONDecoder().decode([Chat].self, from: resultData)
+                print(ChatList)
+                print(ChatList[0])
+                self.chats = ChatList
+                print("SANA-000-006")
+            } catch {
+                print("SANA-000-007")
+                print(error)
+                
+            }
+            
+            print("SANA-000-008")
+            for chat in self.chats {
+                print("SANA-000-009")
+                self.shopList.append(chat.shop!)
+                self.wineList.append(chat.wine!)
+                self.stateList.append(chat.state!)
+                self.contentList.append(chat.content!)
+         
+                
+            }
+            
         }
 
         dataTask.resume()
@@ -68,8 +137,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(shops.count)
-        return shops.count
+        print("SANA-000-002")
+        print(chats.count)
+        return chats.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,17 +147,30 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("SANA-000-003")
         let cell =
             tableView.dequeueReusableCell(
-                withIdentifier: "SanaCustomCell",
+                withIdentifier: "ChatTableViewCell",
                 for: indexPath
-            )
+            ) as! ChatTableViewCell
+        
+//        let cell = tableView.dequeueReusableCell("ChatTableViewCell", forIndexPath: indexPath) as! ChatTableViewCell
+
+        
         
         cell.separatorInset = UIEdgeInsets.zero
+        
+        cell.shopName.text = self.shopList[indexPath.row]
+        cell.wineName.text = self.wineList[indexPath.row]
+        cell.chatState.text = self.stateList[indexPath.row]
+        
+        print("SANA-000-001")
+        print(cell)
 
         return cell
     }
 }
+
 
 class ChatTableViewCell: UITableViewCell {
     
@@ -96,6 +179,15 @@ class ChatTableViewCell: UITableViewCell {
     @IBOutlet weak var wineImage: UIImageView!
     @IBOutlet weak var elapsedTime: UILabel!
     @IBOutlet weak var chatState: UILabel!
+    
+    func setupView(model: Chat) {
+
+        shopName.text = model.shop
+        wineName.text =  model.wine
+        chatState.text = model.state
+    }
+
+    
 }
 
 

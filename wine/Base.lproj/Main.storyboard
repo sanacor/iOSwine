@@ -197,7 +197,7 @@
                                 <rect key="frame" x="0.0" y="94" width="375" height="635"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SanaCustomCell" rowHeight="150" id="3FW-zN-62x" userLabel="Chat Table View Cell" customClass="ChatTableViewCell" customModule="wine" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTableViewCell" rowHeight="150" id="3FW-zN-62x" userLabel="Chat Table View Cell" customClass="ChatTableViewCell" customModule="wine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3FW-zN-62x" id="ROc-2h-gMX">
@@ -272,6 +272,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xW9-Fp-jgF"/>
                     <connections>
+                        <outlet property="tableView" destination="rbS-nh-yMg" id="epE-Rm-iOX"/>
                         <outlet property="titleView" destination="M6c-dY-1uA" id="iM0-7n-ehF"/>
                     </connections>
                 </viewController>
